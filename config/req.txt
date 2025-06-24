@@ -1,0 +1,11 @@
+numpy>=1.21
+opencv-python>=4.5
+pyyaml>=5.4
+
+ultralytics>=8.0
+
+# Для работы с ROS2
+# rclpy                      
+
+# Для Modbus TCP
+# pymodbus>=2.5

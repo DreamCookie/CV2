@@ -1,0 +1,17 @@
+contour:
+  min_area: 1000            # в пикселях
+  blur_ksize: [5, 5]
+  threshold_params:
+    type: "adaptive"        # "adaptive" | "otsu" | "fixed"
+    max_value: 255
+    method: "gaussian"      # для adaptive "mean" или "gaussian"
+    block_size: 11
+    C: 2
+    thresh: 127             # для fixed threshold
+
+nms:
+  iou_threshold: 0.3
+
+nn:
+  model_path: "models/yolo.pt"
+  conf_thresh: 0.5
