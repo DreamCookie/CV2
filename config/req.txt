@@ -1,7 +1,7 @@
 numpy>=1.21
 opencv-python>=4.5
 pyyaml>=5.4
-
+opencv-contrib-python
 ultralytics>=8.0
 
 # Для работы с ROS2
