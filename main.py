@@ -167,3 +167,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# python main.py --input-dir test_img/
+# python main.py --input-dir test_img/ --use-nn
+# python main.py --camera 0
+# python main.py --camera 1 --use-nn
+# python main.py --config config/detection.yaml --input-dir test_img/
