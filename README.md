@@ -18,7 +18,7 @@
 
 ## Структура проекта
 
-## 📂 Структура проекта
+## Структура проекта
 
 ```text
 CV/
@@ -30,7 +30,12 @@ CV/
 │   ├── base.py                
 │   ├── contour_detector.py    
 │   ├── nn_detector.py         
-│   └── __pycache__/           
+│   ├── adaptive_background.py
+│   ├── calibration.py              
+│   ├── coord_transform.py   
+│   ├── mask.py 
+│   ├── ros_coord_transform.py  
+│   └── preprocessing.py         
 ├── models/                    
 │   └── yolo.pt                
 ├── test_img/                  
@@ -57,22 +62,41 @@ CV/
 
 ## Использование
 
-### Обработка изображений из папки
+### команды
 ```bash
-python src/main.py --input-dir path/to/images
-```
-"q" - для закрытия окна
-
-### Камера
-```bash
-python src/main.py --camera 0
+ python src/main.py --input-dir test_img/
 ```
 
-### yolo
 ```bash
-python src/main.py -i detector/test_img --use-nn
-# или
-python src/main.py --camera 0 --use-nn
+python src/main.py --input-dir test_img/ --use-nn
+```
+
+```bash
+python src/main.py --input-dir test_img/ --use-ros
+```
+
+```bash
+python src/main.py --input-dir test_img/ --use-nn --use-ros
+```
+
+```bash
+python src/main.py --input-dir test_img/ --mode tools
+python src/main.py --input-dir test_img/ --mode workpieces
+```
+
+```bash
+python main.py --camera 0
+```
+
+```bash
+python main.py --camera 0 --use-nn
+```
+
+```bash
+python src/main.py --camera 0 --use-ros
+```
+```bash
+python src/main.py --camera 0 --use-nn --use-ros
 ```
 
 ### Модули
@@ -83,9 +107,6 @@ detector/nn_detector.py — детектор на базе ultralytics.YOLO
 
 detector/base.py — интерфейс Detector, класс BoundingBox
 
-src/utils.py — загрузка конфигурации и вспомогательные функции
-
-src/main.py — CLI, разбор аргументов, инициализация детектора и отображение результатов
 
 ## в планах
 1. Калибровка камеры и перевод пикселей в мм.

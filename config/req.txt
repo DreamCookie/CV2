@@ -1,11 +1,10 @@
 numpy>=1.21
 opencv-python>=4.5
+opencv-contrib-python>=4.5
 pyyaml>=5.4
-opencv-contrib-python
+torch>=1.13.0
 ultralytics>=8.0
+pymodbus>=2.5
 
-# Для работы с ROS2
-# rclpy                      
 
-# Для Modbus TCP
-# pymodbus>=2.5
+# sudo apt install ros-humble-desktop  - отдельно или https://docs.ros.org/en/humble/Installation/Windows-Install-Binary.html 

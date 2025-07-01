@@ -2,7 +2,9 @@ import cv2
 import numpy as np
 
 class BackgroundMasker:
-
+    """
+    Статическое фоновое вычитание по заранее снятому фону + применение ROI-масок
+    """
     def __init__(self, background: np.ndarray = None, roi_mask: np.ndarray = None, thresh: int = 30):
         self.background = background
         self.roi_mask = roi_mask
@@ -16,8 +18,5 @@ class BackgroundMasker:
             _, fg = cv2.threshold(diff, self.thresh, 255, cv2.THRESH_BINARY)
             mask = fg
         if self.roi_mask is not None:
-            if mask is None:
-                mask = self.roi_mask.copy()
-            else:
-                mask = cv2.bitwise_and(mask, self.roi_mask)
+            mask = mask & self.roi_mask if mask is not None else self.roi_mask.copy()
         return mask if mask is not None else gray
