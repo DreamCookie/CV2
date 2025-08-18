@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Стереокалибровка для «side-by-side» USB-камеры.
 Сохраняет stereo_calib.npz с картами выпрямления
